@@ -1,7 +1,6 @@
 <div class="p-5">
   <h1><%= @task.title %></h1>
-  <%= link_to('Edit', "#{@task.id}/edit") %>
   <p><%= @task.details %></p>
   <p><%= @task.completed ? '<i class="fa fa-check-square-o mr-2"></i> This task was completed'.html_safe :  '<i class="fa fa-square-o mr-2"></i> This task was not completed yet'.html_safe%></p>
-  <%= link_to('Back to list', tasks_path) %>
+  <%= link_to('<i class="fa fa-undo mr-2"></i>back to list'.html_safe, tasks_path) %> | <%= link_to('Edit', edit_task_path(@task.id)) %>
 </div>
