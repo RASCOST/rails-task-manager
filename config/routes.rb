@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get 'tasks/new', to: 'tasks#new'
   post 'tasks', to: 'tasks#create'
+
+  delete 'task/:id', to: 'tasks#destroy'
 end

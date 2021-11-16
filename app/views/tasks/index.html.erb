@@ -1,7 +1,7 @@
 <h1>My Tasks<h1>
 <ul>
   <% @tasks.each do |task| %>
-  <li><%= task.title %> - completed: <%= task.completed %></li>
+  <li><%= link_to(task.title, task_path(task.id)) %> - completed: <%= task.completed %></li>
   <% end %>
 </ul>
 <%= link_to('new task', tasks_new_path) %>
