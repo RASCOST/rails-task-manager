@@ -1,7 +1,11 @@
-<h1>My Tasks<h1>
-<ul>
-  <% @tasks.each do |task| %>
-  <li><%= link_to(task.title, task_path(task.id)) %> - completed: <%= task.completed %> <%= link_to('delete', task, method: :delete, data: { confirm: "Are you sure"}) %></li>
-  <% end %>
-</ul>
-<%= link_to('new task', new_task_path) %>
+<div class="p-5">
+  <h1>My Tasks</h1>
+  <ul class='list-unstyled'>
+    <% @tasks.each do |task| %>
+      <li>
+        <%= task.completed ? '<i class="fa fa-check-square-o mr-2"></i>'.html_safe : '<i class="fa fa-square-o mr-2"></i>'.html_safe %><%= link_to(task.title, task_path(task.id)) %><%= link_to('<i class="fa fa-trash-o ml-2"></i>'.html_safe, task, method: :delete, data: { confirm: "Are you sure"}) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to('<i class="fa fa-plus mr-2"></i>Add new task'.html_safe, new_task_path) %>
+</div>

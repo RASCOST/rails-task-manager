@@ -1,7 +1,12 @@
 <%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :details %><br>
+  <%= f.text_field :details %><br>
+  <% unless @task.new_record? %>
+    <%= f.check_box :completed %>
+    <%= f.label :completed %><br>
+  <% end %>
   <%= f.submit %>
 <% end %>
+<%= link_to('<i class="fa fa-undo mr-2 mt-4"></i>back to list'.html_safe, tasks_path) %>
