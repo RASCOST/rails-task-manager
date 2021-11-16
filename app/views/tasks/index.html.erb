@@ -4,8 +4,4 @@
   <li><%= link_to(task.title, task_path(task.id)) %> - completed: <%= task.completed %> <%= link_to('delete', task, method: :delete, data: { confirm: "Are you sure"}) %></li>
   <% end %>
 </ul>
-<%= link_to('new task', tasks_new_path) %>
-<%# link_to "Delete #{@restaurant.name}",
-            restaurant_path(@restaurant),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+<%= link_to('new task', new_task_path) %>
